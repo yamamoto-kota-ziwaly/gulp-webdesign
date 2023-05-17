@@ -9,7 +9,7 @@ const notify = require('gulp-notify');
 const uglify = require('gulp-uglify');
 const sass = require("gulp-sass")(require("sass"));
 const sassGlob = require("gulp-sass-glob-use-forward");
-const autoprefixer = require("gulp-autoprefixer"); // これはまだ未実装
+const autoprefixer = require("gulp-autoprefixer");
 
 // pugをphpに変換する
 const compilePug = () => {
