@@ -56,9 +56,16 @@ const minifyJs = () => {
 
 // scssを変換する
 const compileSass = () => {
+    const TARGET_BROWSERS = [
+    "last 3 versions",
+    "> 5%",
+    "iOS >= 9.0",
+    "Android >= 4.1"
+  ];
   return src('src/scss/*.scss')
     .pipe(plumber(notify.onError('Error: <%= error.message %>')))
     .pipe(sassGlob())
+    .pipe(autoprefixer(TARGET_BROWSERS))
     .pipe(sass.sync({
       outputStyle: 'compressed'
     }))
